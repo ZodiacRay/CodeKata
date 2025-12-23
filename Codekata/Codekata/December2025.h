@@ -38,3 +38,15 @@ double Solution012(std::vector<int> arr);
 int Solution013(int n);
 
 int Solution014(int n); 
+
+int Solution015(int n); 
+
+std::vector<long long> Solution016(int x, int n);
+
+std::vector<int> Solution017(long long n);
+
+int Solution018(std::string s); 
+
+long long Solution019(long long n); 
+
+long long Solution020(long long n);

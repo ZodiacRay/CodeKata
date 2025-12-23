@@ -1,4 +1,5 @@
 #include "December2025.h"
+#include <bits/stdc++.h>
 
 // ==============
 // 2025-12-22
@@ -143,5 +144,82 @@ int Solution014(int n)
 	}
 
 	return ret ; 
+}
+
+// 나머지가 1이 되는 수 찾기
+// https://school.programmers.co.kr/learn/courses/30/lessons/87389
+int Solution015(int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (n % i == 1) return i; 
+	}
+
+	// 도달 x 
+	return -1; 
+}
+
+// x만큼 간격이 있는 n개의 숫자
+// https://school.programmers.co.kr/learn/courses/30/lessons/12954
+std::vector<long long> Solution016(int x, int n)
+{
+	std::vector<long long> ret;
+
+	for (int i = 1; i <= n; i++)
+	{
+		ret.push_back(x * i);
+	}
+
+	return ret; 
+}
+
+// 자연수 뒤집어 배열로 만들기
+// https://school.programmers.co.kr/learn/courses/30/lessons/12932
+std::vector<int> Solution017(long long n)
+{
+	std::vector<int> ret;
+	std::string s = std::to_string(n);
+
+	for (int i = s.size() - 1; i >= 0; i--)
+	{
+		ret.push_back(s[i] - '0');
+	}
+
+	return ret; 
+
+}
+
+// 문자열을 정수로 바꾸기
+// https://school.programmers.co.kr/learn/courses/30/lessons/12925
+int Solution018(std::string s)
+{
+	if (s[0] >= '0' && s[0] <= '9') return std::stoi(s);
+
+	if (s[0] == '+') return std::stoi(s.substr(1));
+
+	if (s[0] == '-') return -std::stoi(s.substr(1));
+
+}
+
+// 정수 제곱근 판별
+//https://school.programmers.co.kr/learn/courses/30/lessons/12934
+long long Solution019(long long n)
+{
+	for (long long i = 1; i * i <= n; i++)
+	{
+		if (i * i == n) return (i + 1) * (i + 1); 
+	}
+
+	return -1; 
+}
+
+// 정수 내림차순으로 배치하기
+// https://school.programmers.co.kr/learn/courses/30/lessons/12933
+long long Solution020(long long n)
+{
+	std::string s = std::to_string(n);
+	sort(s.rbegin(), s.rend());
+
+	return std::stoll(s);
 }
 
