@@ -223,3 +223,95 @@ long long Solution020(long long n)
 	return std::stoll(s);
 }
 
+// ==============
+// 2025-12-24
+// ==============
+
+// 하샤드 수
+// https://school.programmers.co.kr/learn/courses/30/lessons/12947
+bool Soution021(int x)
+{
+	int sum = 0;
+
+	std::string s = std::to_string(x);
+	for (char c : s)
+	{
+		sum += c - '0';
+	}
+
+	return x % sum == 0;
+
+	return false;
+}
+
+// 두 정수 사이의 합 
+// https://school.programmers.co.kr/learn/courses/30/lessons/12912
+long long Solution022(int a, int b)
+{
+	if (a == b) return a;
+
+	long long ret = 0;
+	for(long long i = 1ll * std::min(a,b); i <= 1ll * std::max(a,b); i++)
+	{
+		ret += i; 
+	}
+
+	return ret;
+}
+
+// 콜라츠 추측 
+// https://school.programmers.co.kr/learn/courses/30/lessons/12943
+int Soution023(int num)
+{
+	int cnt = 0;
+	long long n = 1ll * num; 
+
+	while (n != 1)
+	{
+		n = n % 2 == 0 ? n / 2 : 3 * n + 1;
+		cnt++;
+
+		if (cnt >= 500) return -1; 
+	}
+
+	return cnt; 
+}
+
+// 서울에서 김서방 찾기
+// https://school.programmers.co.kr/learn/courses/30/lessons/12919
+std::string Solution024(std::vector<std::string> seoul)
+{
+	std::string ret = "김서방은";
+
+	for (int i = 0; i < seoul.size(); i++)
+	{
+		if (seoul[i] == "Kim") ret += std::to_string(i);
+	}
+
+	ret += "에 있다";
+
+	return ret; 
+}
+
+// 나누어 떨어지는 숫자 배열
+// https://school.programmers.co.kr/learn/courses/30/lessons/12910
+std::vector<int> Solution025(std::vector<int> arr, int divisor)
+{
+	std::set<int> temp; 
+
+	for (const int num : arr)
+	{
+		if (num % divisor == 0) temp.insert(num);
+	}
+
+	if (temp.empty()) return {-1};
+
+	std::vector<int> ret; 
+	for (const int num : temp)
+	{
+		ret.push_back(num); 
+	}
+
+	return ret; 
+}
+

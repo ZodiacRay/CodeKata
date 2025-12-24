@@ -50,3 +50,18 @@ int Solution018(std::string s);
 long long Solution019(long long n); 
 
 long long Solution020(long long n);
+
+
+// ==============
+// 2025-12-24
+// ==============
+
+bool Soution021(int x); 
+
+long long Solution022(int a, int b);
+
+int Soution023(int num);
+
+std::string Solution024(std::vector<std::string> seoul);
+
+std::vector<int> Solution025(std::vector<int> arr, int divisor);
