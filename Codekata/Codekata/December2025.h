@@ -65,3 +65,12 @@ int Soution023(int num);
 std::string Solution024(std::vector<std::string> seoul);
 
 std::vector<int> Solution025(std::vector<int> arr, int divisor);
+
+
+// ==============
+// 2025-12-26
+// ==============
+
+int Solution026(std::vector<int> absolutes, std::vector<bool> signs);
+
+std::string Solution027(std::string phone_number);

@@ -315,3 +315,33 @@ std::vector<int> Solution025(std::vector<int> arr, int divisor)
 	return ret; 
 }
 
+
+// ==============
+// 2025-12-26
+// ==============
+
+// 음양 더하기 
+// https://school.programmers.co.kr/learn/courses/30/lessons/76501
+int Solution026(std::vector<int> absolutes, std::vector<bool> signs)
+{
+	int sum = 0;
+
+	for (int i = 0; i < signs.size(); i++)
+	{
+		sum += signs[i] ? absolutes[i] : -absolutes[i];
+	}
+
+	return sum; 
+}
+
+// 핸드폰 번호 가리기 
+// https://school.programmers.co.kr/learn/courses/30/lessons/12948
+std::string Solution027(std::string phone_number)
+{
+	for (int i = 0; i < phone_number.size() - 4; i++)
+	{
+		phone_number[i] = '*';
+	}
+
+	return phone_number; 
+}
