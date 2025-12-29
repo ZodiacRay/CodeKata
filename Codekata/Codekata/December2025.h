@@ -74,3 +74,12 @@ std::vector<int> Solution025(std::vector<int> arr, int divisor);
 int Solution026(std::vector<int> absolutes, std::vector<bool> signs);
 
 std::string Solution027(std::string phone_number);
+
+
+// ==============
+// 2025-12-29
+// ==============
+
+int Solution028(std::vector<int> numbers); 
+
+std::vector<int> Solution029(std::vector<int> arr); 
