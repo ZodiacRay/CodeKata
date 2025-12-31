@@ -372,3 +372,72 @@ std::vector<int> Solution029(std::vector<int> arr)
 
 	return arr; 
 }
+
+// ==============
+// 2025-12-30
+// ==============
+
+// 가운데 글자 가져오기
+// https://school.programmers.co.kr/learn/courses/30/lessons/12903
+std::string Solution030(std::string s)
+{
+	int size = s.size();
+	if (size % 2 == 0)
+	{
+		return s.substr(size/2 - 1, 2);
+	}
+
+	return s.substr(size/2, 1);
+
+}
+
+// 수박수박수박수박수박수?
+// https://school.programmers.co.kr/learn/courses/30/lessons/12922
+std::string Solution031(int n)
+{
+	std::string ret = "";
+
+	for (int i = 1; i <= n; i++)
+	{
+		ret += i % 2 == 0 ? "박" : "수"; 
+	}
+
+	return ret; 
+}
+
+// ==============
+// 2025-12-31
+// ==============
+
+// 내적
+// https://school.programmers.co.kr/learn/courses/30/lessons/70128
+int Solution032(std::vector<int> a, std::vector<int> b)
+{
+	int ret = 0;
+	int n = a.size();
+
+	for (int i = 0; i < n; i++)
+	{
+		ret += a[i] * b[i];
+	}
+
+	return ret;
+}
+
+// 약수의 개수와 덧셈 
+// https://school.programmers.co.kr/learn/courses/30/lessons/77884
+int Solution033(int left, int right)
+{
+	int sum = 0;
+
+	for (int i = left; i <= right; i++)
+	{
+		int cnt = 1;
+		for (int j = 2; j <= i; j++)
+			if (i % j == 0) cnt++;
+
+		sum += cnt % 2 == 0 ? i : -i;
+	}
+
+	return sum;
+}

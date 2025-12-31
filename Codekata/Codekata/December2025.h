@@ -83,3 +83,20 @@ std::string Solution027(std::string phone_number);
 int Solution028(std::vector<int> numbers); 
 
 std::vector<int> Solution029(std::vector<int> arr); 
+
+
+// ==============
+// 2025-12-30
+// ==============
+
+std::string Solution030(std::string s);
+
+std::string Solution031(int n);
+
+// ==============
+// 2025-12-31
+// ==============
+
+int Solution032(std::vector<int> a, std::vector<int> b);
+
+int Solution033(int left, int right);
