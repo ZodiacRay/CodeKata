@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="January2026.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="December2025.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="December2025.h" />
+    <ClInclude Include="January2026.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
