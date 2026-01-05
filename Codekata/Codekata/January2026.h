@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 
 
@@ -23,3 +23,13 @@ std::vector<int> Solution039(int n, int m);
 // ==============
 // 2026-01-05
 // ==============
+
+int Solution040(int n);
+
+std::string Solution041(std::string s);
+
+int Solution042(std::vector<int> number); 
+
+int Solution043(std::string t, std::string p);
+
+int Solution044(std::vector<std::vector<int>> sizes);

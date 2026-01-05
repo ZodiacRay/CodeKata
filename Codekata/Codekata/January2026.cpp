@@ -1,11 +1,11 @@
-#include "January2026.h"
+ï»¿#include "January2026.h"
 #include <bits/stdc++.h>
 
 // ==============
 // 2026-01-02
 // ==============
 
-// ¹®ÀÚ¿­ ³»¸²Â÷¼øÀ¸·Î ¹èÄ¡ÇÏ±â
+// ë¬¸ìì—´ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ë°°ì¹˜í•˜ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12917
 std::string Solution034(std::string s)
 {
@@ -14,7 +14,7 @@ std::string Solution034(std::string s)
 	return s;
 }
 
-// ºÎÁ·ÇÑ ±İ¾× °è»êÇÏ±â
+// ë¶€ì¡±í•œ ê¸ˆì•¡ ê³„ì‚°í•˜ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/82612
 long long Solution035(int price, int money, int count)
 {
@@ -30,7 +30,7 @@ long long Solution035(int price, int money, int count)
     return ret >= 0 ? ret : 0;
 }
 
-// ¹®ÀÚ¿­ ´Ù·ç±â ±âº»
+// ë¬¸ìì—´ ë‹¤ë£¨ê¸° ê¸°ë³¸
 // https://school.programmers.co.kr/learn/courses/30/lessons/12918
 bool Solution036(std::string s)
 {
@@ -45,7 +45,7 @@ bool Solution036(std::string s)
     return true;
 }
 
-// Çà·ÄÀÇ µ¡¼À
+// í–‰ë ¬ì˜ ë§ì…ˆ
 // https://school.programmers.co.kr/learn/courses/30/lessons/12950
 std::vector<std::vector<int>> Solution037(std::vector<std::vector<int>> arr1, std::vector<std::vector<int>> arr2)
 {
@@ -62,7 +62,7 @@ std::vector<std::vector<int>> Solution037(std::vector<std::vector<int>> arr1, st
     return arr1;
 }
 
-// Á÷»ç°¢Çü º°Âï±â
+// ì§ì‚¬ê°í˜• ë³„ì°ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12969
 void Solution038(int a, int b)
 {
@@ -77,7 +77,7 @@ void Solution038(int a, int b)
     }
 }
 
-// ÃÖ´ë°ø¾à¼ö¿Í ÃÖ¼Ò°ø¹è¼ö
+// ìµœëŒ€ê³µì•½ìˆ˜ì™€ ìµœì†Œê³µë°°ìˆ˜
 // https://school.programmers.co.kr/learn/courses/30/lessons/12940
 
 int GCD(int a, int b)
@@ -93,3 +93,115 @@ std::vector<int> Solution039(int n, int m)
 
     return { gcd, lcm }; 
 }
+
+
+// ==============
+// 2026-01-05
+// ==============
+
+// 3ì§„ë²• ë’¤ì§‘ê¸°
+// https://school.programmers.co.kr/learn/courses/30/lessons/68935
+int Solution040(int n)
+{
+    std::string s = "";
+
+    while (n)
+    {
+        s.push_back((n % 3) + '0');
+        n /= 3;
+    }
+
+    std::reverse(s.begin(), s.end());
+
+    int ret = 0;
+    int k = 1;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        ret += (s[i] - '0') * k;
+        k *= 3;
+    }
+
+    return ret; 
+}
+
+// ì´ìƒí•œ ë¬¸ì ë§Œë“¤ê¸°
+// https://school.programmers.co.kr/learn/courses/30/lessons/12930
+std::string Solution041(std::string s)
+{
+    int cnt = 1;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == ' ')
+        {
+            cnt = 1;
+            continue;
+        }
+
+        if ((cnt) % 2 != 0)
+            s[i] = toupper(s[i]);
+        else
+            s[i] = tolower(s[i]);
+
+        cnt++;
+    }
+    return s; 
+}
+
+// ì‚¼ì´ì‚¬
+// https://school.programmers.co.kr/learn/courses/30/lessons/131705
+int Solution042(std::vector<int> number)
+{
+    int ret = 0;
+    int n = number.size();
+
+    for (int i = 0; i < n - 2; i++)
+    {
+        int sum = number[i];
+        for (int j = i + 1; j < n - 1; j++)
+        {
+            sum += number[j];
+            for (int k = j + 1; k < n; k++)
+            {
+                sum += number[k];
+                if (sum == 0) ret++;
+                sum -= number[k];
+            }
+            sum -= number[j];
+        }
+    }
+    return ret;
+}
+
+int Solution043(std::string t, std::string p)
+{
+    int ret = 0;
+    int psize = p.size();
+
+    for (int i = 0; i <= t.size() - psize; i++) {
+        std::string sub = t.substr(i, psize);
+
+        if (sub <= p) ret++;
+    }
+
+    return ret;
+}
+
+// ìµœì†Œ ì§ì‚¬ê°í˜• 
+// https://school.programmers.co.kr/learn/courses/30/lessons/86491
+int Solution044(std::vector<std::vector<int>> sizes)
+{
+    int w = 0, h = 0;
+
+    for (std::vector<int> v : sizes)
+    {
+        int x = v[0], y = v[1];
+        if (v[0] < v[1]) x = v[1], y = v[0];
+
+        w = std::max(w, x);
+        h = std::max(h, y);
+    }
+
+    return w * h;
+}
+
