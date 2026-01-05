@@ -173,6 +173,8 @@ int Solution042(std::vector<int> number)
     return ret;
 }
 
+// 크기가 작은 부분
+// https://school.programmers.co.kr/learn/courses/30/lessons/147355
 int Solution043(std::string t, std::string p)
 {
     int ret = 0;
