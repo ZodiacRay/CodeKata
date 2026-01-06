@@ -1,8 +1,6 @@
 ﻿#pragma once
 
 
-
-
 // ==============
 // 2026-01-02
 // ==============
@@ -33,3 +31,17 @@ int Solution042(std::vector<int> number);
 int Solution043(std::string t, std::string p);
 
 int Solution044(std::vector<std::vector<int>> sizes);
+
+// ==============
+// 2026-01-06  
+// ==============
+
+std::string Solution045(std::string s, int n);
+
+int Solution046(std::string s);
+
+std::vector<std::string> Solution047(std::vector<std::string> strings, int n);
+
+std::vector<int> Solution048(std::vector<int> array, std::vector<std::vector<int>> commands); 
+
+std::vector<int> Solution049(std::vector<int> numbers);

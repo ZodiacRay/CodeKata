@@ -207,3 +207,115 @@ int Solution044(std::vector<std::vector<int>> sizes)
     return w * h;
 }
 
+
+
+// ==============
+// 2026-01-06
+// ==============
+
+// 시저 암호
+// https://school.programmers.co.kr/learn/courses/30/lessons/12926
+std::string Solution045(std::string s, int n)
+{
+    for (char& c : s)
+    {
+        if (c >= 'a' && c <= 'z')
+        {
+            int k = c - 'a';
+            c = 'a' + (k + n) % 26;
+        }
+        else if (c >= 'A' && c <= 'Z')
+        {
+            int k = c - 'A';
+            c = 'A' + (k + n) % 26;
+        }
+    }
+
+    return s;
+}
+
+// 숫자 문자열과 영단어
+// https://school.programmers.co.kr/learn/courses/30/lessons/81301
+int Solution046(std::string s)
+{
+    std::vector<std::string> nums = {
+     "zero",
+     "one", "two" ,"three",
+     "four", "five", "six",
+     "seven", "eight", "nine"
+    };
+
+    std::string str = "";
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] >= '0' && s[i] <= '9')
+        {
+            str.push_back(s[i]);
+            continue;
+        }
+
+
+        for (int j = 0; j < 10; j++)
+        {
+            int n = nums[j].size();
+            if (s.substr(i, n) == nums[j])
+            {
+                str.push_back('0' + j);
+                i += n - 1;
+                break;
+            }
+        }
+
+    }
+    return stoi(str);
+}
+
+// 문자열 내 마음대로 정렬하기
+// https://school.programmers.co.kr/learn/courses/30/lessons/12915
+std::vector<std::string> Solution047(std::vector<std::string> strings, int n)
+{
+    sort(strings.begin(), strings.end(), [n](std::string a, std::string b)
+        {
+            return a[n] == b[n] ? a < b : a[n] < b[n]; 
+        });
+
+    return strings;
+}
+
+// K번째수
+// https://school.programmers.co.kr/learn/courses/30/lessons/42748
+std::vector<int> Solution048(std::vector<int> array, std::vector<std::vector<int>> commands)
+{
+    std::vector<int> ret;
+
+    for (auto cmd : commands)
+    {
+        std::vector<int> temp;
+        for (int i = cmd[0] - 1; i < cmd[1]; i++) temp.push_back(array[i]);
+
+        sort(temp.begin(), temp.end());
+
+        ret.push_back(temp[cmd[2] - 1]);
+    }
+
+    return ret;
+}
+
+
+// 두 개 뽑아서 더하기
+// https://school.programmers.co.kr/learn/courses/30/lessons/68644
+std::vector<int> Solution049(std::vector<int> numbers)
+{
+    std::set<int> s;
+
+    for (int i = 0; i < numbers.size() - 1; i++)
+        for (int j = i + 1; j < numbers.size(); j++)
+            s.insert(numbers[i] + numbers[j]);
+        
+    std::vector<int> ret;
+    for (int i : s) ret.push_back(i);
+    
+    return ret;;
+}
+
