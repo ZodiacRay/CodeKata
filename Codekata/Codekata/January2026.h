@@ -45,3 +45,18 @@ std::vector<std::string> Solution047(std::vector<std::string> strings, int n);
 std::vector<int> Solution048(std::vector<int> array, std::vector<std::vector<int>> commands); 
 
 std::vector<int> Solution049(std::vector<int> numbers);
+
+// ==============
+// 2026-01-09
+// ==============
+
+std::vector<int> Solution050(std::string s);
+
+
+// ==============
+// 2026-01-12
+// ==============
+
+std::string Solution051(std::vector<int> food);
+
+int Solution052(int a, int b, int n);

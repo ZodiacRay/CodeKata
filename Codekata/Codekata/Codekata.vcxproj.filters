@@ -24,13 +24,15 @@
       <Filter>소스 파일\2025</Filter>
     </ClCompile>
     <ClCompile Include="January2026.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\2026</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="December2025.h">
       <Filter>소스 파일\2025</Filter>
     </ClInclude>
-    <ClInclude Include="January2026.h" />
+    <ClInclude Include="January2026.h">
+      <Filter>소스 파일\2026</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

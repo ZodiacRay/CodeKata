@@ -1,6 +1,10 @@
 ﻿#include "January2026.h"
 #include <bits/stdc++.h>
 
+using namespace std; 
+
+
+#pragma region 01/02 
 // ==============
 // 2026-01-02
 // ==============
@@ -94,7 +98,9 @@ std::vector<int> Solution039(int n, int m)
     return { gcd, lcm }; 
 }
 
+#pragma endregion 
 
+#pragma region 01/05
 // ==============
 // 2026-01-05
 // ==============
@@ -207,8 +213,9 @@ int Solution044(std::vector<std::vector<int>> sizes)
     return w * h;
 }
 
+#pragma endregion 
 
-
+#pragma region 01/06
 // ==============
 // 2026-01-06
 // ==============
@@ -302,7 +309,6 @@ std::vector<int> Solution048(std::vector<int> array, std::vector<std::vector<int
     return ret;
 }
 
-
 // 두 개 뽑아서 더하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/68644
 std::vector<int> Solution049(std::vector<int> numbers)
@@ -319,3 +325,64 @@ std::vector<int> Solution049(std::vector<int> numbers)
     return ret;;
 }
 
+#pragma endregion
+
+#pragma region 01/09
+// 가장 가까운 같은 글자
+// https://school.programmers.co.kr/learn/courses/30/lessons/142086
+std::vector<int> Solution050(std::string s)
+{
+    std::vector<int> ret;
+
+    std::vector<int> v(26, -1);
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        char c = s[i];
+        if (v[c - 'a'] == -1) ret.push_back(-1);
+        else ret.push_back(i - v[c - 'a']);
+
+        v[c - 'a'] = i;
+    }
+    return ret;
+}
+
+#pragma endregion 
+
+#pragma region 01/12
+// 푸드 파이트 대회
+// https://school.programmers.co.kr/learn/courses/30/lessons/134240
+string Solution051(std::vector<int> food)
+{
+    string ret = "0";
+
+    for (int i = food.size()-1; i > 0; i--)
+    {
+        int cnt = food[i] / 2;
+
+        while (cnt--)
+        {
+            ret = to_string(i) + ret + to_string(i);
+        }
+    }
+
+    return ret; 
+}
+
+// 콜라 문제
+// https://school.programmers.co.kr/learn/courses/30/lessons/132267
+int Solution052(int a, int b, int n)
+{
+    int remains = n;
+    int cnt = 0;
+
+    while (remains >= a)
+    {
+        cnt += (remains / a) * b;
+        remains = (remains / a) * b + remains % a;
+    }
+
+    return cnt;
+}
+
+#pragma endregion
