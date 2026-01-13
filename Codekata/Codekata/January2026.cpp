@@ -1,5 +1,5 @@
 ﻿#include "January2026.h"
-#include <bits/stdc++.h>
+
 
 using namespace std; 
 
@@ -327,7 +327,7 @@ std::vector<int> Solution049(std::vector<int> numbers)
 
 #pragma endregion
 
-#pragma region 01/09
+#pragma region 1/9
 // 가장 가까운 같은 글자
 // https://school.programmers.co.kr/learn/courses/30/lessons/142086
 std::vector<int> Solution050(std::string s)
@@ -349,7 +349,7 @@ std::vector<int> Solution050(std::string s)
 
 #pragma endregion 
 
-#pragma region 01/12
+#pragma region 1/12
 // 푸드 파이트 대회
 // https://school.programmers.co.kr/learn/courses/30/lessons/134240
 string Solution051(std::vector<int> food)
@@ -386,3 +386,49 @@ int Solution052(int a, int b, int n)
 }
 
 #pragma endregion
+
+#pragma region 1/13
+// 명예의 전당 (1)
+// https://school.programmers.co.kr/learn/courses/30/lessons/138477
+vector<int> Solution053(int k, vector<int> score)
+{
+    vector<int> ret;
+    multiset<int> ms;
+
+    for (int s : score)
+    {
+        ms.insert(s);
+        if (ms.size() > k)
+            ms.erase(ms.begin());
+
+        ret.push_back(*ms.begin());
+    }
+
+    return ret;
+}
+
+std::string Solution054(int a, int b)
+{
+    std::vector<string> str = {
+    "SUN","MON","TUE","WED","THU","FRI","SAT"
+    };
+
+    vector<int> month = { 0,
+        31, 29, 31, 30, 31, 30,
+        31, 31, 30, 31, 30, 31
+    };
+
+    int dif = 4;
+
+    for (int i = 1; i < a; i++)
+    {
+        dif += month[i];
+    }
+
+    dif += b;
+
+    return str[dif % 7];
+}
+
+#pragma endregion
+

@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include <bits/stdc++.h>
 
 // ==============
 // 2026-01-02
@@ -60,3 +60,12 @@ std::vector<int> Solution050(std::string s);
 std::string Solution051(std::vector<int> food);
 
 int Solution052(int a, int b, int n);
+
+
+// ==============
+// 2026-01-13
+// ==============
+
+std::vector<int> Solution053(int k, std::vector<int> score);
+
+std::string Solution054(int a, int b);

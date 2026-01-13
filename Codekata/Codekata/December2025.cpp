@@ -1,3 +1,4 @@
+ï»¿
 #include "December2025.h"
 #include <bits/stdc++.h>
 
@@ -5,12 +6,12 @@
 // 2025-12-22
 // ==============
 
-// µÎ¼öÀÇ Â÷ ±¸ÇÏ±â 
+// ë‘ìˆ˜ì˜ ì°¨ êµ¬í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/120803
 
 int Solution001(int num1, int num2)
 {
-	// µÎ¼öÀÇ Â÷¸¦ ¸®ÅÏÇÑ´Ù. 
+	// ë‘ìˆ˜ì˜ ì°¨ë¥¼ ë¦¬í„´í•œë‹¤. 
 	return num1 - num2;
 }
 
@@ -19,7 +20,7 @@ int Solution001(int num1, int num2)
 // 2025-12-23
 // ==============
 
-// µÎ¼öÀÇ °ö ±¸ÇÏ±â 
+// ë‘ìˆ˜ì˜ ê³± êµ¬í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/120804
 int Solution002(int num1, int num2)
 {
@@ -27,7 +28,7 @@ int Solution002(int num1, int num2)
 }
 
 
-// ¸ò ±¸ÇÏ±â 
+// ëª« êµ¬í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/120805
 
 int Solution003(int num1, int num2)
@@ -35,35 +36,35 @@ int Solution003(int num1, int num2)
 	return num1 / num2;
 }
 
-// ³ªÀÌ Ãâ·Â
+// ë‚˜ì´ ì¶œë ¥
 // https://school.programmers.co.kr/learn/courses/30/lessons/120820
 int Solution004(int age)
 {
 	return 2022 - age + 1;
 }
 
-// ¼ıÀÚ ºñ±³ÇÏ±â 
+// ìˆ«ì ë¹„êµí•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/120807
 int Solution005(int num1, int num2)
 {
 	return num1 == num2 ? 1 : -1;
 }
 
-// µÎ ¼öÀÇ ÇÕ
+// ë‘ ìˆ˜ì˜ í•©
 // https://school.programmers.co.kr/learn/courses/30/lessons/120802
 int Solution006(int num1, int num2)
 {
 	return num1 + num2; 
 }
 
-// µÎ ¼öÀÇ ³ª´°¼À
+// ë‘ ìˆ˜ì˜ ë‚˜ëˆ—ì…ˆ
 // https://school.programmers.co.kr/learn/courses/30/lessons/120806
 int Solution007(int num1, int num2)
 {
 	return (num1 * 1000 / num2);
 }
 
-// °¢µµ±â 
+// ê°ë„ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/120829
 int Solution008(int angle)
 {
@@ -78,7 +79,7 @@ int Solution008(int angle)
 	return -1;
 }
 
-// Â¦¼öÀÇ ÇÕ
+// ì§ìˆ˜ì˜ í•©
 // https://school.programmers.co.kr/learn/courses/30/lessons/120831
 int Solution009(int n)
 {
@@ -90,7 +91,7 @@ int Solution009(int n)
 	return ret; 
 }
 
-// ¹è¿­ÀÇ Æò±Õ °ª
+// ë°°ì—´ì˜ í‰ê·  ê°’
 // https://school.programmers.co.kr/learn/courses/30/lessons/12937
 double Solution010(std::vector<int> numbers)
 {
@@ -101,14 +102,14 @@ double Solution010(std::vector<int> numbers)
 	return (double)(sum) / numbers.size();
 }
 
-// Â¦¼ö¿Í È¦¼ö
+// ì§ìˆ˜ì™€ í™€ìˆ˜
 // https://school.programmers.co.kr/learn/courses/30/lessons/12937
 std::string Solution011(int num)
 {
 	return num % 2 ? "Odd" : "Even";
 }
 
-// Æò±Õ ±¸ÇÏ±â 
+// í‰ê·  êµ¬í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/12944
 double Solution012(std::vector<int> arr)
 {
@@ -119,7 +120,7 @@ double Solution012(std::vector<int> arr)
 	return (double)sum / arr.size(); 
 }
 
-// ÀÚ¸´¼ö ´õÇÏ±â 
+// ìë¦¿ìˆ˜ ë”í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/12931
 int Solution013(int n)
 {
@@ -133,7 +134,7 @@ int Solution013(int n)
 	return ret; 
 }
 
-// ¾à¼öÀÇ ÇÕ
+// ì•½ìˆ˜ì˜ í•©
 // https://school.programmers.co.kr/learn/courses/30/lessons/12928
 int Solution014(int n)
 {
@@ -146,7 +147,7 @@ int Solution014(int n)
 	return ret ; 
 }
 
-// ³ª¸ÓÁö°¡ 1ÀÌ µÇ´Â ¼ö Ã£±â
+// ë‚˜ë¨¸ì§€ê°€ 1ì´ ë˜ëŠ” ìˆ˜ ì°¾ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/87389
 int Solution015(int n)
 {
@@ -155,11 +156,11 @@ int Solution015(int n)
 		if (n % i == 1) return i; 
 	}
 
-	// µµ´Ş x 
+	// ë„ë‹¬ x 
 	return -1; 
 }
 
-// x¸¸Å­ °£°İÀÌ ÀÖ´Â n°³ÀÇ ¼ıÀÚ
+// xë§Œí¼ ê°„ê²©ì´ ìˆëŠ” nê°œì˜ ìˆ«ì
 // https://school.programmers.co.kr/learn/courses/30/lessons/12954
 std::vector<long long> Solution016(int x, int n)
 {
@@ -173,7 +174,7 @@ std::vector<long long> Solution016(int x, int n)
 	return ret; 
 }
 
-// ÀÚ¿¬¼ö µÚÁı¾î ¹è¿­·Î ¸¸µé±â
+// ìì—°ìˆ˜ ë’¤ì§‘ì–´ ë°°ì—´ë¡œ ë§Œë“¤ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12932
 std::vector<int> Solution017(long long n)
 {
@@ -189,7 +190,7 @@ std::vector<int> Solution017(long long n)
 
 }
 
-// ¹®ÀÚ¿­À» Á¤¼ö·Î ¹Ù²Ù±â
+// ë¬¸ìì—´ì„ ì •ìˆ˜ë¡œ ë°”ê¾¸ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12925
 int Solution018(std::string s)
 {
@@ -201,7 +202,7 @@ int Solution018(std::string s)
 
 }
 
-// Á¤¼ö Á¦°ö±Ù ÆÇº°
+// ì •ìˆ˜ ì œê³±ê·¼ íŒë³„
 //https://school.programmers.co.kr/learn/courses/30/lessons/12934
 long long Solution019(long long n)
 {
@@ -213,7 +214,7 @@ long long Solution019(long long n)
 	return -1; 
 }
 
-// Á¤¼ö ³»¸²Â÷¼øÀ¸·Î ¹èÄ¡ÇÏ±â
+// ì •ìˆ˜ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ë°°ì¹˜í•˜ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12933
 long long Solution020(long long n)
 {
@@ -227,7 +228,7 @@ long long Solution020(long long n)
 // 2025-12-24
 // ==============
 
-// ÇÏ»şµå ¼ö
+// í•˜ìƒ¤ë“œ ìˆ˜
 // https://school.programmers.co.kr/learn/courses/30/lessons/12947
 bool Soution021(int x)
 {
@@ -244,7 +245,7 @@ bool Soution021(int x)
 	return false;
 }
 
-// µÎ Á¤¼ö »çÀÌÀÇ ÇÕ 
+// ë‘ ì •ìˆ˜ ì‚¬ì´ì˜ í•© 
 // https://school.programmers.co.kr/learn/courses/30/lessons/12912
 long long Solution022(int a, int b)
 {
@@ -259,7 +260,7 @@ long long Solution022(int a, int b)
 	return ret;
 }
 
-// Äİ¶óÃ÷ ÃßÃø 
+// ì½œë¼ì¸  ì¶”ì¸¡ 
 // https://school.programmers.co.kr/learn/courses/30/lessons/12943
 int Soution023(int num)
 {
@@ -277,23 +278,23 @@ int Soution023(int num)
 	return cnt; 
 }
 
-// ¼­¿ï¿¡¼­ ±è¼­¹æ Ã£±â
+// ì„œìš¸ì—ì„œ ê¹€ì„œë°© ì°¾ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12919
 std::string Solution024(std::vector<std::string> seoul)
 {
-	std::string ret = "±è¼­¹æÀº";
+	std::string ret = "ê¹€ì„œë°©ì€";
 
 	for (int i = 0; i < seoul.size(); i++)
 	{
 		if (seoul[i] == "Kim") ret += std::to_string(i);
 	}
 
-	ret += "¿¡ ÀÖ´Ù";
+	ret += "ì— ìˆë‹¤";
 
 	return ret; 
 }
 
-// ³ª´©¾î ¶³¾îÁö´Â ¼ıÀÚ ¹è¿­
+// ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ëŠ” ìˆ«ì ë°°ì—´
 // https://school.programmers.co.kr/learn/courses/30/lessons/12910
 std::vector<int> Solution025(std::vector<int> arr, int divisor)
 {
@@ -320,7 +321,7 @@ std::vector<int> Solution025(std::vector<int> arr, int divisor)
 // 2025-12-26
 // ==============
 
-// À½¾ç ´õÇÏ±â 
+// ìŒì–‘ ë”í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/76501
 int Solution026(std::vector<int> absolutes, std::vector<bool> signs)
 {
@@ -334,7 +335,7 @@ int Solution026(std::vector<int> absolutes, std::vector<bool> signs)
 	return sum; 
 }
 
-// ÇÚµåÆù ¹øÈ£ °¡¸®±â 
+// í•¸ë“œí° ë²ˆí˜¸ ê°€ë¦¬ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/12948
 std::string Solution027(std::string phone_number)
 {
@@ -350,7 +351,7 @@ std::string Solution027(std::string phone_number)
 // 2025-12-29
 // ==============
 
-// ¾ø´Â ¼ıÀÚ ´õÇÏ±â 
+// ì—†ëŠ” ìˆ«ì ë”í•˜ê¸° 
 // https://school.programmers.co.kr/learn/courses/30/lessons/86051
 int Solution028(std::vector<int> numbers)
 {
@@ -360,7 +361,7 @@ int Solution028(std::vector<int> numbers)
 	return ret; 
 }
 
-// Á¦ÀÏ ÀÛÀº ¼ö Á¦°ÅÇÏ±â
+// ì œì¼ ì‘ì€ ìˆ˜ ì œê±°í•˜ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12935
 std::vector<int> Solution029(std::vector<int> arr)
 {
@@ -377,7 +378,7 @@ std::vector<int> Solution029(std::vector<int> arr)
 // 2025-12-30
 // ==============
 
-// °¡¿îµ¥ ±ÛÀÚ °¡Á®¿À±â
+// ê°€ìš´ë° ê¸€ì ê°€ì ¸ì˜¤ê¸°
 // https://school.programmers.co.kr/learn/courses/30/lessons/12903
 std::string Solution030(std::string s)
 {
@@ -391,7 +392,7 @@ std::string Solution030(std::string s)
 
 }
 
-// ¼ö¹Ú¼ö¹Ú¼ö¹Ú¼ö¹Ú¼ö¹Ú¼ö?
+// ìˆ˜ë°•ìˆ˜ë°•ìˆ˜ë°•ìˆ˜ë°•ìˆ˜ë°•ìˆ˜?
 // https://school.programmers.co.kr/learn/courses/30/lessons/12922
 std::string Solution031(int n)
 {
@@ -399,7 +400,7 @@ std::string Solution031(int n)
 
 	for (int i = 1; i <= n; i++)
 	{
-		ret += i % 2 == 0 ? "¹Ú" : "¼ö"; 
+		ret += i % 2 == 0 ? "ë°•" : "ìˆ˜"; 
 	}
 
 	return ret; 
@@ -409,7 +410,7 @@ std::string Solution031(int n)
 // 2025-12-31
 // ==============
 
-// ³»Àû
+// ë‚´ì 
 // https://school.programmers.co.kr/learn/courses/30/lessons/70128
 int Solution032(std::vector<int> a, std::vector<int> b)
 {
@@ -424,7 +425,7 @@ int Solution032(std::vector<int> a, std::vector<int> b)
 	return ret;
 }
 
-// ¾à¼öÀÇ °³¼ö¿Í µ¡¼À 
+// ì•½ìˆ˜ì˜ ê°œìˆ˜ì™€ ë§ì…ˆ 
 // https://school.programmers.co.kr/learn/courses/30/lessons/77884
 int Solution033(int left, int right)
 {
