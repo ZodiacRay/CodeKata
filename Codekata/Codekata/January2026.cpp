@@ -406,7 +406,8 @@ vector<int> Solution053(int k, vector<int> score)
 
     return ret;
 }
-
+// 2016 년
+// https://school.programmers.co.kr/learn/courses/30/lessons/12901
 std::string Solution054(int a, int b)
 {
     std::vector<string> str = {
@@ -432,3 +433,63 @@ std::string Solution054(int a, int b)
 
 #pragma endregion
 
+
+#pragma region 1/14
+// 카드 뭉치
+// https://school.programmers.co.kr/learn/courses/30/lessons/159994
+string Solution055(vector<string> cards1, vector<string> cards2, vector<string> goal)
+{
+    int i1 = 0, i2 = 0;
+
+    for (int i = 0; i < goal.size(); i++)
+    {
+        if (i1 < cards1.size() && goal[i] == cards1[i1]) i1++;
+        else if (i2 < cards2.size() && goal[i] == cards2[i2]) i2++;
+        else return "No";
+    }
+
+    return "Yes";
+}
+
+
+// 모의고사 
+// https://school.programmers.co.kr/learn/courses/30/lessons/42840
+vector<int> Solution057(vector<int> answers)
+{
+    int t1[] = { 1,2,3,4,5 };
+    int t2[] = { 2,1,2,3,2,4,2,5 };
+    int t3[] = { 3,3,1,1,2,2,4,4,5,5 };
+
+    vector<int> result(4, 0);
+
+    for (int i = 0; i < n; i++)
+    {
+        result[1] += t1[i % 5] == answers[i] ? 1 : 0;
+        result[2] += t2[i % 8] == answers[i] ? 1 : 0;
+        result[3] += t3[i % 10] == answers[i] ? 1 : 0;
+    }
+
+    int max_val = *max_element(result.begin(), result.end());
+
+    vector<int> ret;
+    for (int i = 1; i < 4; i++)
+        if (max_val == result[i]) ret.push_back(i);
+
+    return ret;
+}
+
+// 과일 장수 
+// https://school.programmers.co.kr/learn/courses/30/lessons/135808
+int Solution058(int k, int m, vector<int> score)
+{
+    sort(score.rbegin(), score.rend());
+
+    int ret = 0;
+    for (int i = m - 1; i < score.size(); i += m)
+        ret += score[i] * m;
+    
+    return ret; 
+}
+
+
+#pragma endregion 

@@ -1,22 +1,24 @@
 ﻿#pragma once
 #include <bits/stdc++.h>
 
+using namespace std; 
+
 // ==============
 // 2026-01-02
 // ==============
 
-std::string Solution034(std::string s); 
+string Solution034(string s); 
 
 long long Solution035(int price, int moneny, int count); 
 
-bool Solution036(std::string s); 
+bool Solution036(string s); 
 
-std::vector<std::vector<int>> Solution037(std::vector<std::vector<int>> arr1, std::vector<std::vector<int>> arr2);
+vector<std::vector<int>> Solution037(vector<vector<int>> arr1, vector<vector<int>> arr2);
 
 void Solution038(int a, int b); 
 
 int GCD(int a, int b); 
-std::vector<int> Solution039(int n, int m);
+vector<int> Solution039(int n, int m);
 
 // ==============
 // 2026-01-05
@@ -24,40 +26,40 @@ std::vector<int> Solution039(int n, int m);
 
 int Solution040(int n);
 
-std::string Solution041(std::string s);
+string Solution041(string s);
 
-int Solution042(std::vector<int> number); 
+int Solution042(vector<int> number); 
 
-int Solution043(std::string t, std::string p);
+int Solution043(string t, string p);
 
-int Solution044(std::vector<std::vector<int>> sizes);
+int Solution044(vector<vector<int>> sizes);
 
 // ==============
 // 2026-01-06  
 // ==============
 
-std::string Solution045(std::string s, int n);
+string Solution045(string s, int n);
 
-int Solution046(std::string s);
+int Solution046(string s);
 
-std::vector<std::string> Solution047(std::vector<std::string> strings, int n);
+std::vector<std::string> Solution047(vector<string> strings, int n);
 
-std::vector<int> Solution048(std::vector<int> array, std::vector<std::vector<int>> commands); 
+std::vector<int> Solution048(vector<int> array, vector<vector<int>> commands); 
 
-std::vector<int> Solution049(std::vector<int> numbers);
+std::vector<int> Solution049(vector<int> numbers);
 
 // ==============
 // 2026-01-09
 // ==============
 
-std::vector<int> Solution050(std::string s);
+std::vector<int> Solution050(string s);
 
 
 // ==============
 // 2026-01-12
 // ==============
 
-std::string Solution051(std::vector<int> food);
+string Solution051(vector<int> food);
 
 int Solution052(int a, int b, int n);
 
@@ -69,3 +71,13 @@ int Solution052(int a, int b, int n);
 std::vector<int> Solution053(int k, std::vector<int> score);
 
 std::string Solution054(int a, int b);
+
+// ==============
+// 2026-01-14
+// ==============
+
+string Solution055(vector<string> cards1, vector<string> cards2, vector<string> goal);
+
+vector<int> Solution057(vector<int> answers); 
+
+int Solution058(int k, int m, vector<int> score);
