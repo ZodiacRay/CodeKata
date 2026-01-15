@@ -451,11 +451,25 @@ string Solution055(vector<string> cards1, vector<string> cards2, vector<string> 
     return "Yes";
 }
 
+// 과일 장수 
+// https://school.programmers.co.kr/learn/courses/30/lessons/135808
+int Solution056(int k, int m, vector<int> score)
+{
+    sort(score.rbegin(), score.rend());
+
+    int ret = 0;
+    for (int i = m - 1; i < score.size(); i += m)
+        ret += score[i] * m;
+
+    return ret;
+}
 
 // 모의고사 
 // https://school.programmers.co.kr/learn/courses/30/lessons/42840
 vector<int> Solution057(vector<int> answers)
 {
+    int n = answers.size(); 
+
     int t1[] = { 1,2,3,4,5 };
     int t2[] = { 2,1,2,3,2,4,2,5 };
     int t3[] = { 3,3,1,1,2,2,4,4,5,5 };
@@ -477,18 +491,45 @@ vector<int> Solution057(vector<int> answers)
 
     return ret;
 }
+#pragma endregion 
 
-// 과일 장수 
-// https://school.programmers.co.kr/learn/courses/30/lessons/135808
-int Solution058(int k, int m, vector<int> score)
+#pragma region 1/15
+// 소수 만들기 
+// https://school.programmers.co.kr/learn/courses/30/lessons/12977
+bool isPrime(int n)
 {
-    sort(score.rbegin(), score.rend());
+    if (n < 2) return false;
 
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0) return false;
+
+    return true;
+}
+int Solution058(vector<int> nums)
+{
+    int n = nums.size();
     int ret = 0;
-    for (int i = m - 1; i < score.size(); i += m)
-        ret += score[i] * m;
-    
-    return ret; 
+
+    int sum = 0;
+    for (int i = 0; i < n - 2; i++)
+    {
+        sum = nums[i];
+        for (int j = i + 1; j < n - 1; j++)
+        {
+            sum += nums[j];
+            for (int k = j + 1; k < n; k++)
+            {
+                sum += nums[k];
+
+                ret += isPrime(sum) ? 1 : 0;
+
+                sum -= nums[k];
+            }
+            sum -= nums[j];
+        }
+    }
+
+    return ret;
 }
 
 

@@ -78,6 +78,12 @@ std::string Solution054(int a, int b);
 
 string Solution055(vector<string> cards1, vector<string> cards2, vector<string> goal);
 
+int Solution056(int k, int m, vector<int> score);
+
 vector<int> Solution057(vector<int> answers); 
 
-int Solution058(int k, int m, vector<int> score);
+// ==============
+// 2026-01-15
+// ==============
+
+int Solution058(vector<int> nums);
