@@ -87,3 +87,37 @@ vector<int> Solution057(vector<int> answers);
 // ==============
 
 int Solution058(vector<int> nums);
+
+
+// ==============
+// 2026-01-19 
+// ==============
+
+int Solution059(int n, int m, vector<int> section);
+
+
+// ==============
+// 2026-01-20
+// ==============
+
+int Solution060(int number, int limit, int power);
+
+vector<int> Solution061(vector<int> lottos, vector<int> win_nums);
+
+// ==============
+// 2026-01-21
+// ==============
+
+int Solution062(vector<string> babbling);
+
+string Solution063(string X, string Y);
+
+int Solution064(int n, vector<int> lost, vector<int> reserve); // 미해결 
+
+// =======================================================================
+
+int Solution065(string s);
+
+vector<int> Solution066(vector<string> keymap, vector<string> targets);
+
+string Solution067(string s, string skip, int index); 

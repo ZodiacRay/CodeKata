@@ -433,7 +433,6 @@ std::string Solution054(int a, int b)
 
 #pragma endregion
 
-
 #pragma region 1/14
 // 카드 뭉치
 // https://school.programmers.co.kr/learn/courses/30/lessons/159994
@@ -505,6 +504,9 @@ bool isPrime(int n)
 
     return true;
 }
+
+
+
 int Solution058(vector<int> nums)
 {
     int n = nums.size();
@@ -532,5 +534,258 @@ int Solution058(vector<int> nums)
     return ret;
 }
 
+#pragma endregion 
+
+#pragma region 1/19
+// 덧칠하기 
+// https://school.programmers.co.kr/learn/courses/30/lessons/161989 /
+int Solution059(int n, int m, vector<int> section)
+{
+    int ret = 0;
+    int si = 0;
+
+    int paint = 0;
+    for (int i = 0; i <= n; i++)
+    {
+        paint = paint > 0 ? paint-1 : 0;
+
+        if (i == section[si])
+        {
+            si++;
+            if (paint > 0) continue;
+
+            paint = m;
+            ret++;
+        }
+    }
+
+    return ret;
+}
+#pragma endregion 
+
+#pragma region 1/20 
+// 기사단원의 무기
+// https://school.programmers.co.kr/learn/courses/30/lessons/136798 /
+int Solution060(int number, int limit, int power)
+{
+    vector<int> factors(number + 1, 1);
+
+    for (int i = 2; i <= number; i++)
+    {
+        factors[i]++;
+        for (int j = i + i; j <= number; j += i)
+        {
+            factors[j]++;
+        }
+    }
+
+    int sum = 0;
+    for (int i = 1; i <= number; i++)
+    {
+        sum += factors[i] > limit ? power : factors[i];
+    }
+
+
+    return sum;
+}
+
+// 로또의 최고 순위와 최저 순위
+// https://school.programmers.co.kr/learn/courses/30/lessons/77484 / 
+vector<int> Solution061(vector<int> lottos, vector<int> win_nums)
+{
+    int zero = 0, cnt = 0;
+    for (int i = 0; i < 6; i++)
+    {
+        if (lottos[i] == 0)
+        {
+            zero++;
+            continue;
+        }
+
+        for (int j = 0; j < 6; j++)
+        {
+            if (lottos[i] == win_nums[j])
+            {
+                cnt++;
+                break;
+            }
+        }
+    }
+
+    int high = min(6, 7 - cnt - zero);
+    int low = min(6, 7 - cnt);
+
+    return { high, low };
+}
+
+#pragma endregion 
+
+
+#pragma region 1/21 
+
+// 옹알이 (2) 
+// https://school.programmers.co.kr/learn/courses/30/lessons/133499 / 
+bool check(string s)
+{
+    vector<string> str = { "aya", "ye", "woo", "ma" };
+    int n = s.size();
+    string last = "";
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            string temp = s.substr(0, str[j].size());
+            if (temp == str[j] && last != temp)
+            {
+                s.erase(0, str[j].size());
+                last = temp;
+            }
+        }
+
+        if (s.size() == 0) return true;
+    }
+
+    return s.size() == 0;
+
+}
+
+int Solution062(vector<string> babbling)
+{
+    int answer = 0;
+
+    for (string s : babbling)
+    {
+        if (check(s))
+        {
+            answer++;
+
+            cout << s << endl;
+        }
+    }
+
+    return answer;
+}
+
+// 숫자 짝꿍
+// https://school.programmers.co.kr/learn/courses/30/lessons/131128
+string Solution063(string X, string Y)
+{
+    vector<int> x(10, 0);
+    vector<int> y(10, 0);
+
+    string ret = "";
+
+    for (char c : X)
+        x[c - '0']++;
+
+    for (char c : Y)
+    {
+        if (x[c - '0'] > 0)
+        {
+            ret += c;
+            x[c - '0']--;
+        }
+    }
+    if (ret.size() == 0) return "-1";
+
+    sort(ret.rbegin(), ret.rend());
+    if (ret[0] == '0') return "0";
+
+
+    return ret;
+
+}
+
+// 체육복
+// https://school.programmers.co.kr/learn/courses/30/lessons/42862
+int Solution064(int n, vector<int> lost, vector<int> reserve)
+{
+    return 0;
+}
+
+// 문자열 나누기
+// https://school.programmers.co.kr/learn/courses/30/lessons/140108
+int Solution065(string s)
+{
+    int n = s.size();
+    if (n < 1) return 0;
+
+    int a = 0, b = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (s[0] == s[i]) a++;
+        else b++;
+
+        if (a == b) return 1 + Solution065(s.substr(i + 1));
+    }
+
+    return 1;
+}
+
+// 대충 만든 자판
+// https://school.programmers.co.kr/learn/courses/30/lessons/160586 
+vector<int> Solution066(vector<string> keymap, vector<string> targets)
+{
+    vector<int> answer;
+    vector<int> mintabs(27, 0);
+
+    for (string key : keymap)
+    {
+        for (int i = 0; i < key.size(); i++)
+        {
+            int indx = key[i] - 'A';
+            if (mintabs[indx] == 0) mintabs[indx] = i + 1;
+            else mintabs[indx] = min(mintabs[indx], i + 1);
+        }
+    }
+
+    for (string target : targets)
+    {
+        int tab_count = 0;
+        for (char c : target)
+        {
+            int indx = c - 'A';
+
+            if (mintabs[indx] == 0)
+            {
+                tab_count = -1;
+                break;
+            }
+            tab_count += mintabs[indx];
+        }
+        answer.push_back(tab_count);
+    }
+
+    return answer;
+}
+
+// 둘만의 암호
+// https://school.programmers.co.kr/learn/courses/30/lessons/155652
+string Solution067(string s, string skip, int index)
+{
+    vector<bool> should_skip(26, false);
+
+    for (char c : skip) should_skip[c - 'a'] = true;
+
+    string ret = "";
+    for (char c : s)
+    {
+        char cur = c;
+        int i = index;
+
+        while (i--)
+        {
+            cur++;
+            if (cur > 'z') cur = 'a';
+
+            if (should_skip[cur - 'a']) i++;
+        }
+
+        ret += cur;
+    }
+
+    return ret;
+}
 
 #pragma endregion 
