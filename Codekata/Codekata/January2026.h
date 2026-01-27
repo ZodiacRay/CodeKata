@@ -112,12 +112,24 @@ int Solution062(vector<string> babbling);
 
 string Solution063(string X, string Y);
 
-int Solution064(int n, vector<int> lost, vector<int> reserve); // 미해결 
+// ==============
+// 2026-01-22
+// ==============
 
-// =======================================================================
+int Solution064(int n, vector<int> lost, vector<int> reserve);  
 
 int Solution065(string s);
+
+// ==============
+// 2026-01-23
+// ==============
 
 vector<int> Solution066(vector<string> keymap, vector<string> targets);
 
 string Solution067(string s, string skip, int index); 
+
+// ==============
+// 2026-01-26
+// ==============
+
+int Solution068(vector<int> ingredient); 

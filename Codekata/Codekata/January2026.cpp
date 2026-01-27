@@ -11,7 +11,7 @@ using namespace std;
 
 // 문자열 내림차순으로 배치하기
 // https://school.programmers.co.kr/learn/courses/30/lessons/12917
-std::string Solution034(std::string s)
+std::string Solution034(string s)
 {
 	sort(s.rbegin(), s.rend());
 
@@ -696,12 +696,38 @@ string Solution063(string X, string Y)
     return ret;
 
 }
+#pragma endregion 
 
+#pragma region 1/22
 // 체육복
 // https://school.programmers.co.kr/learn/courses/30/lessons/42862
 int Solution064(int n, vector<int> lost, vector<int> reserve)
 {
-    return 0;
+   vector<int> v(n+1, 1);
+    
+    for (int i : lost) v[i]--;
+    for (int i : reserve) v[i]++;
+    
+    for (int i = 1; i <= n; i++)
+    {
+        if (v[i] > 0) continue;
+        
+        if (v[i-1] > 1 )
+        {
+            v[i] = 1; 
+            v[i-1] = 1;
+        }
+        else if (v[i+1] > 1)
+        {
+            v[i] = 1;
+            v[i-1] = 1; 
+        }
+    }
+    
+    int ret = 0;
+    for (int i = 1; i <= n; i++) ret += i > 0 ? 1 : 0; 
+    
+    return ret; 
 }
 
 // 문자열 나누기
@@ -722,7 +748,9 @@ int Solution065(string s)
 
     return 1;
 }
+#pragma endregion 
 
+#pragma region 1/23
 // 대충 만든 자판
 // https://school.programmers.co.kr/learn/courses/30/lessons/160586 
 vector<int> Solution066(vector<string> keymap, vector<string> targets)
@@ -787,5 +815,29 @@ string Solution067(string s, string skip, int index)
 
     return ret;
 }
-
 #pragma endregion 
+
+#pragma region 1/26
+int Solution068(vector<int> ingredient)
+{
+    vector<int> st; 
+    
+    int ret = 0;
+    for(int i : ingredient)
+    {
+        st.push_back(i);
+        if(st.size() < 4) continue;
+        
+        int j = st.size()-1; 
+        if(st[j] == st[j-3] && st[j] == 1&& st[j-1] == 3 && st[j-2] == 2) 
+        {
+            for(int k = 0; k < 4; k++) st.pop_back();
+            
+            ret++;
+        }
+    }
+    
+    return ret; 
+}
+
+#pragma endregion
