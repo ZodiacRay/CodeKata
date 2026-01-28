@@ -818,6 +818,8 @@ string Solution067(string s, string skip, int index)
 #pragma endregion 
 
 #pragma region 1/26
+// 햄버거 만들기
+// https://school.programmers.co.kr/learn/courses/30/lessons/133502 
 int Solution068(vector<int> ingredient)
 {
     vector<int> st; 
@@ -838,6 +840,113 @@ int Solution068(vector<int> ingredient)
     }
     
     return ret; 
+}
+#pragma endregion
+
+#pragma region 1/27
+// 성격 유형 검사     
+// https://school.programmers.co.kr/learn/courses/30/lessons/118666 
+string Solution069(vector<string> survey, vector<int> choices)
+{
+    vector<string> str = 
+    {
+        "RT","CF","JM", "AN"
+    };
+    vector<int> result(4,0); // RT // CF // JM // AN 
+    
+    int n = survey.size();
+    for(int i = 0; i < n; i++)
+    {
+        int point = choices[i] - 4;
+        if(point == 0) continue; 
+        
+        if(survey[i] == "RT") result[0] += point;
+        else if(survey[i] == "TR") result[0] -= point;    
+        
+        else if(survey[i] == "CF") result[1] += point;
+        else if(survey[i] == "FC") result[1] -= point; 
+        
+        else if(survey[i] == "JM") result[2] += point;
+        else if(survey[i] == "MJ") result[2] -= point; 
+        
+        else if(survey[i] == "AN") result[3] += point;
+        else if(survey[i] == "NA") result[3] -= point; 
+    }
+    
+    string ret = "RCJA";
+    for(int i = 0; i < 4; i++)
+    {
+        if(result[i] == 0) continue;
+        
+        ret[i] = result[i] > 0 ? str[i][1] : str[i][0];
+    }
+    
+    return ret; 
+}
+#pragma endregion
+
+#pragma region 1/28
+
+// 바탕화면 정리
+// https://school.programmers.co.kr/learn/courses/30/lessons/161990
+vector<int> Solution070(vector<string> wallpaper)
+{
+    int lux = 51, luy = 51;
+    int rdx = 0, rdy = 0;
+    
+    for(int i = 0; i < wallpaper.size(); i++) {
+        for(int j = 0; j < wallpaper[0].size(); j++) {
+            
+            if(wallpaper[i][j] != '#') continue;
+            
+            lux = min(lux, j);
+            luy = min(luy, i);
+            
+            rdx = max(rdx, j+1);
+            rdy = max(rdy, i+1);
+        }
+    }
+    
+    return {luy, lux, rdy, rdx};
+}
+
+
+// 개인 정보 수집
+// https://school.programmers.co.kr/learn/courses/30/lessons/150370
+int GetTotalDays(string date) 
+{
+    int y = stoi(date.substr(0, 4));
+    int m = stoi(date.substr(5, 2));
+    int d = stoi(date.substr(8, 2));
+    return (y * 12 * 28) + (m * 28) + d;
+}
+
+vector<int> Solution071(string today, vector<string> terms, vector<string> privacies)
+{
+    vector<int> ret;
+    
+    int todayInDays = GetTotalDays(today);
+    int termMap[26] = {0};
+    
+    for (string term : terms) {
+        stringstream ss(term);
+        char type;
+        int month;
+        ss >> type >> month;
+        termMap[type - 'A'] = month * 28; 
+    }
+    
+    for(int i = 0; i < privacies.size(); i++)
+    {
+        int collectDays = GetTotalDays(privacies[i].substr(0, 10));
+        int ti = privacies[i].back() - 'A'; 
+        collectDays += termMap[ti]; 
+        
+        if(collectDays <= todayInDays)
+            ret.push_back(i+1);
+    }
+        
+    return ret;
 }
 
 #pragma endregion
