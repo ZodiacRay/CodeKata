@@ -133,3 +133,16 @@ string Solution067(string s, string skip, int index);
 // ==============
 
 int Solution068(vector<int> ingredient); 
+
+// ==============
+// 2026-01-27
+// ==============
+string Solution069(vector<string> survey, vector<int> choices);
+
+// ==============
+// 2026-01-28
+// ==============
+
+vector<int> Solution070(vector<string> wallpaper); 
+
+vector<int> Solution071(string today, vector<string> terms, vector<string> privacies); 
